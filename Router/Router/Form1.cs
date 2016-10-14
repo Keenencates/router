@@ -21,5 +21,14 @@ namespace Router
         {
 
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                string text = textBox1.Text;
+                listBox1.Items.Add(text);
+            }
+        }
     }
 }
