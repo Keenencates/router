@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Router
 {
-    class kid
+    public class kid
     {
         private string name;
         private string address;
 
-        kid(string kid_name, string kid_address)
+        public kid(string kid_name, string kid_address)
         {
             name = kid_name;
             address = kid_address;
         }
-        string getName()
+        public string getName()
         {
             return name;
         }
 
-        string getAddress()
+        public string getAddress()
         {
             return address;
         }

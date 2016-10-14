@@ -6,28 +6,32 @@ using System.Threading.Tasks;
 
 namespace Router
 {
-    class vehicle
+    public class vehicle
     {
         private int capacity;
         private string name;
         private List<kid> kids_list = new List<kid>();
 
-        vehicle(int vehicle_capacity, string vehicle_name)
+        public vehicle(int vehicle_capacity, string vehicle_name, List<kid> list)
         {
             capacity = vehicle_capacity;
             name = vehicle_name;
+            kids_list = list;
         }
 
-        int getCapacity()
+        public int getCapacity()
         {
             return capacity;
         }
 
-        string getName()
+        public string getName()
         {
             return name;
         }
         
-
+        public List<kid> getKids()
+        {
+            return kids_list;
+        }
     }
 }
