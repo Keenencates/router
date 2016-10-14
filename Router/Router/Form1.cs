@@ -21,5 +21,17 @@ namespace Router
         {
 
         }
+
+
+        private kid parse(string input)
+        {
+            string name, addr = "";
+            int idx = input.IndexOf('/');
+            name = input.Substring(0, idx - 1);
+            addr = input.Substring(idx + 1);
+            kid kid1 = new kid(name, addr);
+            return kid1;
+        }
+
     }
 }
