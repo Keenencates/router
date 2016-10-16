@@ -27,8 +27,18 @@ namespace Router
             if(e.KeyCode == Keys.Enter)
             {
                 string text = textBox1.Text;
-                listBox1.Items.Add(text);
+                string [] spliter = text.Split('/');
+                
+                kid x = new kid(spliter[0],spliter[1]);
+                // need to store the kid somewhere?
+                updateList(x);
             }
+        }
+
+        private void updateList(kid x)
+        {
+            string output = x.getName() + ' ' + x.getAddress();
+            listBox1.Items.Add(output);
         }
     }
 }
