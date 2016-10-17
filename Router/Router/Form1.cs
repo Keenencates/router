@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Router
 {
@@ -51,5 +52,16 @@ namespace Router
             kid kid1 = new kid(name, addr);
             return kid1;
         }
+
+        private void input_box_kid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void input_box_vehicle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
