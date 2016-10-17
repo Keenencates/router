@@ -40,6 +40,37 @@
             this.SuspendLayout();
             // 
             // input_box_kid
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 65);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(349, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(376, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(354, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(273, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Compute Route";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 82);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(349, 147);
+            this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
 
             this.input_box_kid.AcceptsReturn = true;
