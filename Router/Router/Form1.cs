@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Router
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
@@ -50,16 +50,6 @@ namespace Router
             addr = input.Substring(idx + 1);
             kid kid1 = new kid(name, addr);
             return kid1;
-        }
-
-        private void input_box_kid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void input_box_vehicle_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

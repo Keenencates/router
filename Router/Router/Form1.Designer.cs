@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // input_box_kid
@@ -54,15 +53,6 @@
             this.textBox2.Size = new System.Drawing.Size(354, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(273, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Compute Route";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -76,9 +66,8 @@
             this.input_box_kid.AcceptsReturn = true;
             this.input_box_kid.Location = new System.Drawing.Point(12, 65);
             this.input_box_kid.Name = "input_box_kid";
-            this.input_box_kid.Size = new System.Drawing.Size(304, 20);
+            this.input_box_kid.Size = new System.Drawing.Size(349, 20);
             this.input_box_kid.TabIndex = 0;
-            this.input_box_kid.TextChanged += new System.EventHandler(this.input_box_kid_TextChanged);
             // 
             // input_box_vehicle
             // 
@@ -86,7 +75,6 @@
             this.input_box_vehicle.Name = "input_box_vehicle";
             this.input_box_vehicle.Size = new System.Drawing.Size(354, 20);
             this.input_box_vehicle.TabIndex = 1;
-            this.input_box_vehicle.TextChanged += new System.EventHandler(this.input_box_vehicle_TextChanged);
             // 
             // compute_button
             // 
@@ -144,22 +132,11 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Bus Router";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(311, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 20);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "import";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 314);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -185,7 +162,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
     }
 }
 
