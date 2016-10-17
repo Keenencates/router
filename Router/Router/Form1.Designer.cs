@@ -41,20 +41,13 @@
             // 
             // input_box_kid
             // 
-<<<<<<< HEAD
-            this.textBox1.Location = new System.Drawing.Point(12, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-=======
+
             this.input_box_kid.AcceptsReturn = true;
             this.input_box_kid.Location = new System.Drawing.Point(12, 65);
             this.input_box_kid.Name = "input_box_kid";
             this.input_box_kid.Size = new System.Drawing.Size(304, 20);
             this.input_box_kid.TabIndex = 0;
             this.input_box_kid.TextChanged += new System.EventHandler(this.input_box_kid_TextChanged);
->>>>>>> 37b2a8bd39188d478725b0da28b7a5cd4340c33d
             // 
             // input_box_vehicle
             // 

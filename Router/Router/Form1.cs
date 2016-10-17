@@ -23,15 +23,14 @@ namespace Router
 
         }
 
-<<<<<<< HEAD
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                string text = textBox1.Text;
-                string [] spliter = text.Split('/');
-                
-                kid x = new kid(spliter[0],spliter[1]);
+                string text = input_box_kid.Text;
+
+
+                kid x = parse(text);
                 // need to store the kid somewhere?
                 updateList(x);
             }
@@ -40,9 +39,9 @@ namespace Router
         private void updateList(kid x)
         {
             string output = x.getName() + ' ' + x.getAddress();
-            listBox1.Items.Add(output);
+            list_box_kid.Items.Add(output);
+            input_box_kid.Text = "";
         }
-=======
 
         private kid parse(string input)
         {
@@ -112,6 +111,5 @@ namespace Router
         }
         
 
->>>>>>> 37b2a8bd39188d478725b0da28b7a5cd4340c33d
     }
 }
