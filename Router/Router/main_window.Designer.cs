@@ -33,18 +33,18 @@
             this.compute_button = new System.Windows.Forms.Button();
             this.list_box_kid = new System.Windows.Forms.ListBox();
             this.list_box_vehicle = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.kid_label = new System.Windows.Forms.Label();
+            this.vehicle_label = new System.Windows.Forms.Label();
+            this.main_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
-
+            // 
+            // input_box_kid
+            // 
             this.input_box_kid.AcceptsReturn = true;
             this.input_box_kid.Location = new System.Drawing.Point(12, 65);
             this.input_box_kid.Name = "input_box_kid";
             this.input_box_kid.Size = new System.Drawing.Size(349, 20);
             this.input_box_kid.TabIndex = 0;
-
-            this.input_box_kid.TextChanged += new System.EventHandler(this.input_box_kid_TextChanged);
             // 
             // input_box_vehicle
             // 
@@ -69,7 +69,6 @@
             this.list_box_kid.Name = "list_box_kid";
             this.list_box_kid.Size = new System.Drawing.Size(349, 147);
             this.list_box_kid.TabIndex = 3;
-            this.list_box_kid.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // list_box_vehicle
             // 
@@ -79,50 +78,50 @@
             this.list_box_vehicle.Size = new System.Drawing.Size(354, 147);
             this.list_box_vehicle.TabIndex = 4;
             // 
-            // label1
+            // kid_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 28);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Kids";
+            this.kid_label.AutoSize = true;
+            this.kid_label.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kid_label.Location = new System.Drawing.Point(160, 34);
+            this.kid_label.Name = "kid_label";
+            this.kid_label.Size = new System.Drawing.Size(64, 28);
+            this.kid_label.TabIndex = 5;
+            this.kid_label.Text = "Kids";
             // 
-            // label2
+            // vehicle_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(509, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 28);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Vehicles";
+            this.vehicle_label.AutoSize = true;
+            this.vehicle_label.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicle_label.Location = new System.Drawing.Point(509, 34);
+            this.vehicle_label.Name = "vehicle_label";
+            this.vehicle_label.Size = new System.Drawing.Size(106, 28);
+            this.vehicle_label.TabIndex = 6;
+            this.vehicle_label.Text = "Vehicles";
             // 
-            // label3
+            // main_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(263, -5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 57);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Bus Router";
+            this.main_label.AutoSize = true;
+            this.main_label.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.main_label.Location = new System.Drawing.Point(263, -5);
+            this.main_label.Name = "main_label";
+            this.main_label.Size = new System.Drawing.Size(217, 57);
+            this.main_label.TabIndex = 7;
+            this.main_label.Text = "Bus Router";
             // 
-            // Form1
+            // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 314);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.main_label);
+            this.Controls.Add(this.vehicle_label);
+            this.Controls.Add(this.kid_label);
             this.Controls.Add(this.list_box_vehicle);
             this.Controls.Add(this.list_box_kid);
             this.Controls.Add(this.compute_button);
             this.Controls.Add(this.input_box_vehicle);
             this.Controls.Add(this.input_box_kid);
-            this.Name = "Form1";
+            this.Name = "main_window";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,9 +135,9 @@
         private System.Windows.Forms.Button compute_button;
         private System.Windows.Forms.ListBox list_box_kid;
         private System.Windows.Forms.ListBox list_box_vehicle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label kid_label;
+        private System.Windows.Forms.Label vehicle_label;
+        private System.Windows.Forms.Label main_label;
     }
 }
 

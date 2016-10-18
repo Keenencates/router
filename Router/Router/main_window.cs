@@ -17,19 +17,5 @@ namespace Router
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void input_box_kid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void input_box_vehicle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
