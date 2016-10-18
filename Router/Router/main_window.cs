@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Router
 {
-    public partial class Form1 : Form
+    public partial class main_window : Form
     {
-        public Form1()
+        public main_window()
         {
             InitializeComponent();
         }
@@ -20,16 +20,6 @@ namespace Router
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private kid parse(string input)
-        {
-            string name, addr = "";
-            int idx = input.IndexOf('/');
-            name = input.Substring(0, idx - 1);
-            addr = input.Substring(idx + 1);
-            kid kid1 = new kid(name, addr);
-            return kid1;
         }
 
         private void input_box_kid_TextChanged(object sender, EventArgs e)
