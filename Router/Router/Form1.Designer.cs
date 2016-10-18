@@ -37,37 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // input_box_kid
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(376, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(354, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 82);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(349, 147);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
 
             this.input_box_kid.AcceptsReturn = true;
             this.input_box_kid.Location = new System.Drawing.Point(12, 65);
             this.input_box_kid.Name = "input_box_kid";
             this.input_box_kid.Size = new System.Drawing.Size(349, 20);
             this.input_box_kid.TabIndex = 0;
+
+            this.input_box_kid.TextChanged += new System.EventHandler(this.input_box_kid_TextChanged);
             // 
             // input_box_vehicle
             // 
