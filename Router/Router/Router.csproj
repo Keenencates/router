@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="input_handler.cs" />
     <Compile Include="main_window.cs">
       <SubType>Form</SubType>
     </Compile>
