@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Router", "Router\Router.csproj", "{7BAD9EDE-8F29-4AD1-A7F8-D4FDD16F86BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "router", "Router\router.csproj", "{7BAD9EDE-8F29-4AD1-A7F8-D4FDD16F86BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterUnitTests", "RouterUnitTests\RouterUnitTests.csproj", "{235E2CDE-9AA9-483F-BCF2-8891C7A694BC}"
 EndProject

@@ -1,12 +1,13 @@
-﻿using System;
+﻿using router.com.gui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Router
+namespace router.com
 {
-    static class Program
+    static class main
     {
         /// <summary>
         /// The main entry point for the application.

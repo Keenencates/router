@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Router.com.system;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Router
+namespace router.com.system
 {
-    public class vehicle
+    public class vehicle : input_object
     {
         private int capacity;
         private string name;
@@ -32,6 +33,11 @@ namespace Router
         public List<kid> getKids()
         {
             return kids_list;
+        }
+
+        public bool Equals()
+        {
+            throw new NotImplementedException();
         }
     }
 }

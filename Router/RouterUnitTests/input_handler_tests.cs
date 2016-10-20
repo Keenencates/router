@@ -2,27 +2,22 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Router;
 using System.Collections.Generic;
+using router.com.system;
+using router.com.gui;
 
 namespace RouterUnitTests
 {
     [TestClass]
     public class InputHandlerTests
     {
-
         [TestMethod]
-        public void InputTest()
+        public void InputKidTest()
         {
             input_handler handler = new input_handler();
-            handler.insert("Test");
-            Assert.AreEqual(0, handler.find("Test"));
-        }
-
-        [TestMethod]
-        public void OutputTest()
-        {
-            input_handler handler = new input_handler();
-            handler.insert("Test");
-            Assert.AreEqual("Test", handler.get(handler.find("Test")));
+            observable_list_box mybox = new observable_list_box();
+            handler.insert_kid("Test/Test ADDR");
+            handler.Subscribe(mybox);
+            Assert.AreEqual(true, mybox.Items.Contains("Test"));
         }
     }
 }

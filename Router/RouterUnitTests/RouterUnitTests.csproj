@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -58,9 +59,9 @@
     <Compile Include="vehicle_tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Router\Router.csproj">
+    <ProjectReference Include="..\Router\router.csproj">
       <Project>{7bad9ede-8f29-4ad1-a7f8-d4fdd16f86ba}</Project>
-      <Name>Router</Name>
+      <Name>router</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

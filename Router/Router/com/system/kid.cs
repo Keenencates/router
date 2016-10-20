@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Router.com.system;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Router
+namespace router.com.system
 {
-    public class kid
+    public class kid : input_object
     {
         private string name;
         private string address;
