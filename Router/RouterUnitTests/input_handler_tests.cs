@@ -19,5 +19,14 @@ namespace RouterUnitTests
             handler.Subscribe(mybox);
             Assert.AreEqual(true, mybox.Items.Contains("Test"));
         }
+        [TestMethod]
+        public void InputVehicleTest()
+        {
+            input_handler handler = new input_handler();
+            observable_list_box mybox = new observable_list_box();
+            handler.insert_vehicle("Test");
+            handler.Subscribe(mybox);
+            Assert.AreEqual(true, mybox.Items.Contains("Test"));
+        }
     }
 }

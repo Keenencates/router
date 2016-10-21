@@ -31,11 +31,11 @@
             this.input_box_kid = new System.Windows.Forms.TextBox();
             this.input_box_vehicle = new System.Windows.Forms.TextBox();
             this.compute_button = new System.Windows.Forms.Button();
-            this.list_box_kid = new router.com.gui.observable_list_box();
-            this.list_box_vehicle = new System.Windows.Forms.ListBox();
+            this.list_box_vehicle = new observable_list_box();
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.main_label = new System.Windows.Forms.Label();
+            this.list_box_kid = new router.com.gui.observable_list_box();
             this.SuspendLayout();
             // 
             // input_box_kid
@@ -55,6 +55,7 @@
             this.input_box_vehicle.Name = "input_box_vehicle";
             this.input_box_vehicle.Size = new System.Drawing.Size(820, 35);
             this.input_box_vehicle.TabIndex = 1;
+            this.input_box_vehicle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_box_vehicle_KeyDown);
             // 
             // compute_button
             // 
@@ -65,16 +66,6 @@
             this.compute_button.TabIndex = 2;
             this.compute_button.Text = "Compute Route";
             this.compute_button.UseVisualStyleBackColor = true;
-            // 
-            // list_box_kid
-            // 
-            this.list_box_kid.FormattingEnabled = true;
-            this.list_box_kid.ItemHeight = 29;
-            this.list_box_kid.Location = new System.Drawing.Point(28, 183);
-            this.list_box_kid.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.list_box_kid.Name = "list_box_kid";
-            this.list_box_kid.Size = new System.Drawing.Size(809, 323);
-            this.list_box_kid.TabIndex = 3;
             // 
             // list_box_vehicle
             // 
@@ -119,6 +110,16 @@
             this.main_label.TabIndex = 7;
             this.main_label.Text = "Bus Router";
             // 
+            // list_box_kid
+            // 
+            this.list_box_kid.FormattingEnabled = true;
+            this.list_box_kid.ItemHeight = 29;
+            this.list_box_kid.Location = new System.Drawing.Point(28, 183);
+            this.list_box_kid.Margin = new System.Windows.Forms.Padding(7);
+            this.list_box_kid.Name = "list_box_kid";
+            this.list_box_kid.Size = new System.Drawing.Size(809, 323);
+            this.list_box_kid.TabIndex = 3;
+            // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -146,7 +147,7 @@
         private System.Windows.Forms.TextBox input_box_vehicle;
         private System.Windows.Forms.Button compute_button;
         private observable_list_box list_box_kid;
-        private System.Windows.Forms.ListBox list_box_vehicle;
+        private observable_list_box list_box_vehicle;
         private System.Windows.Forms.Label kid_label;
         private System.Windows.Forms.Label vehicle_label;
         private System.Windows.Forms.Label main_label;

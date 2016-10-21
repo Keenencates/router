@@ -13,12 +13,15 @@ namespace router.com.gui
 {
     public partial class main_window : Form
     {
-        private input_handler handler;
+        private input_handler vehicle_handler;
+        private input_handler kid_handler;
         public main_window()
         {
             InitializeComponent();
-            handler = new input_handler();
-            handler.Subscribe(list_box_kid);
+            kid_handler = new input_handler();
+            vehicle_handler = new input_handler();
+            kid_handler.Subscribe(list_box_kid);
+            vehicle_handler.Subscribe(list_box_vehicle);
         }
 
         /// <summary>
@@ -31,12 +34,28 @@ namespace router.com.gui
             if (e.KeyValue == (char)13)
             {
                 try {
-                    handler.insert_kid(input_box_kid.Text);
+                    kid_handler.insert_kid(input_box_kid.Text);
                     input_box_kid.Clear();
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show("Format: Name/Address\n\n" + ex.Message);
+                }
+            }
+        }
+
+        private void input_box_vehicle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)13)
+            {
+                try
+                {
+                    vehicle_handler.insert_vehicle(input_box_vehicle.Text);
+                    input_box_vehicle.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Not Finished." + ex.Message);
                 }
             }
         }

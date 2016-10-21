@@ -11,12 +11,12 @@ namespace router.com.system
 {
     public class input_handler : IObservable<input_object>
     {
-        private List<kid> kid_data;
+        private List<input_object> data;
         private List<IObserver<input_object>> observers; 
 
         public input_handler()
         {
-            kid_data = new List<kid>();
+            data = new List<input_object>();
             observers = new List<IObserver<input_object>>();
         }
 
@@ -27,8 +27,23 @@ namespace router.com.system
         public void insert_kid(string input)
         {
             kid child = new kid(input);
-            kid_data.Add(child);
+            data.Add(child);
+            sort_data();
             update();
+        }
+
+        //REMOVE THIS REDUNDANT CODE
+        public void insert_vehicle(string input)
+        {
+            vehicle car = new vehicle(input);
+            data.Add(car);
+            sort_data();
+            update();
+        }
+
+        public void sort_data()
+        {
+            data.Sort(delegate (input_object k1, input_object k2) { return k1.getName().CompareTo(k2.getName()); });
         }
 
         private void update()
@@ -36,8 +51,7 @@ namespace router.com.system
             foreach(var each in observers)
             {
                 each.OnCompleted();
-
-                foreach(var each2 in kid_data)
+                foreach(var each2 in data)
                 {
                     each.OnNext(each2);
                 }
@@ -51,8 +65,7 @@ namespace router.com.system
             {
                 observers.Add(observer);
                 // Provide observer with existing data.
-                foreach (var each in kid_data)
-                    observer.OnNext(each);
+                update();
             }
             return new Unsubscriber<input_object>(observers, observer);
         }

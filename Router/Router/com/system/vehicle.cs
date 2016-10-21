@@ -20,6 +20,11 @@ namespace router.com.system
             kids_list = list;
         }
 
+        public vehicle(string input)
+        {
+            this.name = input;
+        }
+
         public int getCapacity()
         {
             return capacity;
