@@ -31,7 +31,8 @@
             this.input_box_kid = new System.Windows.Forms.TextBox();
             this.input_box_vehicle = new System.Windows.Forms.TextBox();
             this.compute_button = new System.Windows.Forms.Button();
-            this.list_box_kid = new router.com.gui.observable_list_box();
+            this.list_box_kid = new System.Windows.Forms.ListBox();
+           // this.list_box_kid = new router.com.gui.observable_list_box();
             this.list_box_vehicle = new System.Windows.Forms.ListBox();
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
@@ -145,7 +146,7 @@
         private System.Windows.Forms.TextBox input_box_kid;
         private System.Windows.Forms.TextBox input_box_vehicle;
         private System.Windows.Forms.Button compute_button;
-        private observable_list_box list_box_kid;
+        public System.Windows.Forms.ListBox list_box_kid;
         private System.Windows.Forms.ListBox list_box_vehicle;
         private System.Windows.Forms.Label kid_label;
         private System.Windows.Forms.Label vehicle_label;
