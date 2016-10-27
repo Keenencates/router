@@ -20,6 +20,13 @@ namespace router.com.system
             kids_list = list;
         }
 
+        public vehicle(string name_and_addr)
+        {
+            int idx = name_and_addr.IndexOf('/');
+            this.name = name_and_addr.Substring(0, idx);
+           // this.capacity= name_and_addr.Substring(idx + 1);
+        }
+
         public int getCapacity()
         {
             return capacity;
