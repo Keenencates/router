@@ -13,12 +13,14 @@ namespace router.com.gui
 {
     public partial class main_window : Form
     {
-        private input_handler handler;
+        HashSet<kid> kids_riding = new HashSet<kid>();
+        HashSet<kid> previous_kids = new HashSet<kid>();
+        HashSet<vehicle> vehicles_running = new HashSet<vehicle>();
+        HashSet<vehicle> previous_vehicles = new HashSet<vehicle>();
+
         public main_window()
         {
             InitializeComponent();
-            handler = new input_handler();
-            handler.Subscribe(list_box_kid);
         }
 
         /// <summary>
@@ -31,7 +33,18 @@ namespace router.com.gui
             if (e.KeyValue == (char)13)
             {
                 try {
-                    handler.insert_kid(input_box_kid.Text);
+                    // create a new kid based off what the user entered in
+                    kid new_kid = new kid(Text);
+                    // Check if that kid is already in the set of kids getting driven home today
+                    if(!kids_riding.Contains(new_kid))
+                    {
+                        // If kid is not already in set, add them to the set, and put their information in the list box
+                        kids_riding.Add(new_kid);
+                        // needs to add item to box below
+                        // that box needs to display the name and address of the kid
+                        list_box_kid.Items.Add(new_kid.getName());
+                    }
+
                     input_box_kid.Clear();
                 }
                 catch(Exception ex)

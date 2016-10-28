@@ -46,17 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="com\gui\observable_list_box.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="com\system\input_handler.cs" />
     <Compile Include="com\gui\main_window.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="com\gui\main_window.Designer.cs">
       <DependentUpon>main_window.cs</DependentUpon>
     </Compile>
-    <Compile Include="com\system\input_object.cs" />
     <Compile Include="com\system\kid.cs" />
     <Compile Include="com\main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

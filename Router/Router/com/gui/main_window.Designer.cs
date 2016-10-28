@@ -31,12 +31,8 @@
             this.input_box_kid = new System.Windows.Forms.TextBox();
             this.input_box_vehicle = new System.Windows.Forms.TextBox();
             this.compute_button = new System.Windows.Forms.Button();
-<<<<<<< Updated upstream
-            this.list_box_kid = new System.Windows.Forms.ListBox();            this.list_box_vehicle = new System.Windows.Forms.ListBox();
-=======
             this.list_box_kid = new System.Windows.Forms.ListBox();
             this.list_box_vehicle = new System.Windows.Forms.ListBox();
->>>>>>> Stashed changes
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.main_label = new System.Windows.Forms.Label();
@@ -57,7 +53,7 @@
             this.input_box_vehicle.Name = "input_box_vehicle";
             this.input_box_vehicle.Size = new System.Drawing.Size(354, 20);
             this.input_box_vehicle.TabIndex = 1;
-            this.input_box_vehicle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_box_vehicle_KeyDown);
+
             // 
             // compute_button
             // 
@@ -139,11 +135,7 @@
         private System.Windows.Forms.TextBox input_box_kid;
         private System.Windows.Forms.TextBox input_box_vehicle;
         private System.Windows.Forms.Button compute_button;
-<<<<<<< Updated upstream
-        private observable_list_box list_box_kid;
-=======
         public System.Windows.Forms.ListBox list_box_kid;
->>>>>>> Stashed changes
         public System.Windows.Forms.ListBox list_box_vehicle;
         private System.Windows.Forms.Label kid_label;
         private System.Windows.Forms.Label vehicle_label;
