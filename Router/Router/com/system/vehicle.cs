@@ -7,20 +7,20 @@ namespace router.com.system
     {
         private int capacity;
         private string name;
-        private HashSet<kid> kids_list = new HashSet<kid>();
+        private List<kid> kids_list = new List<kid>();
 
-        public vehicle(int vehicle_capacity, string vehicle_name, HashSet<kid> list)
+        public vehicle(int vehicle_capacity, string vehicle_name, List<kid> list)
         {
             capacity = vehicle_capacity;
             name = vehicle_name;
             kids_list = list;
         }
 
-        public vehicle(string name_and_addr)
+        public vehicle(string name_and_capacity)
         {
-            int idx = name_and_addr.IndexOf('/');
-            this.name = name_and_addr.Substring(0, idx);
-           // this.capacity= name_and_addr.Substring(idx + 1);
+            int idx = name_and_capacity.IndexOf('/');
+            this.name = name_and_capacity.Substring(0, idx);
+           this.capacity = int.Parse(name_and_capacity.Substring(idx + 1));
         }
 
         public int getCapacity()
@@ -33,7 +33,7 @@ namespace router.com.system
             return name;
         }
         
-        public HashSet<kid> getKids()
+        public List<kid> getKids()
         {
             return kids_list;
         }

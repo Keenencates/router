@@ -31,11 +31,15 @@
             this.input_box_kid = new System.Windows.Forms.TextBox();
             this.input_box_vehicle = new System.Windows.Forms.TextBox();
             this.compute_button = new System.Windows.Forms.Button();
-            this.list_box_kid = new System.Windows.Forms.ListBox();
-            this.list_box_vehicle = new System.Windows.Forms.ListBox();
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.main_label = new System.Windows.Forms.Label();
+            this.kids_list_box = new System.Windows.Forms.CheckedListBox();
+            this.vehicle_list_box = new System.Windows.Forms.CheckedListBox();
+            this.remove_kid_button = new System.Windows.Forms.Button();
+            this.remove_vehicle_button = new System.Windows.Forms.Button();
+            this.add_prev_kid = new System.Windows.Forms.Button();
+            this.add_prev_vehicles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // input_box_kid
@@ -53,7 +57,7 @@
             this.input_box_vehicle.Name = "input_box_vehicle";
             this.input_box_vehicle.Size = new System.Drawing.Size(354, 20);
             this.input_box_vehicle.TabIndex = 1;
-
+            this.input_box_vehicle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_box_vehicle_KeyDown);
             // 
             // compute_button
             // 
@@ -63,22 +67,6 @@
             this.compute_button.TabIndex = 2;
             this.compute_button.Text = "Compute Route";
             this.compute_button.UseVisualStyleBackColor = true;
-            // 
-            // list_box_kid
-            // 
-            this.list_box_kid.FormattingEnabled = true;
-            this.list_box_kid.Location = new System.Drawing.Point(12, 82);
-            this.list_box_kid.Name = "list_box_kid";
-            this.list_box_kid.Size = new System.Drawing.Size(349, 147);
-            this.list_box_kid.TabIndex = 3;
-            // 
-            // list_box_vehicle
-            // 
-            this.list_box_vehicle.FormattingEnabled = true;
-            this.list_box_vehicle.Location = new System.Drawing.Point(376, 82);
-            this.list_box_vehicle.Name = "list_box_vehicle";
-            this.list_box_vehicle.Size = new System.Drawing.Size(354, 147);
-            this.list_box_vehicle.TabIndex = 4;
             // 
             // kid_label
             // 
@@ -110,21 +98,78 @@
             this.main_label.TabIndex = 7;
             this.main_label.Text = "Bus Router";
             // 
+            // kids_list_box
+            // 
+            this.kids_list_box.FormattingEnabled = true;
+            this.kids_list_box.Location = new System.Drawing.Point(12, 85);
+            this.kids_list_box.Name = "kids_list_box";
+            this.kids_list_box.Size = new System.Drawing.Size(348, 139);
+            this.kids_list_box.TabIndex = 8;
+            // 
+            // vehicle_list_box
+            // 
+            this.vehicle_list_box.FormattingEnabled = true;
+            this.vehicle_list_box.Location = new System.Drawing.Point(376, 85);
+            this.vehicle_list_box.Name = "vehicle_list_box";
+            this.vehicle_list_box.Size = new System.Drawing.Size(354, 139);
+            this.vehicle_list_box.TabIndex = 9;
+            this.vehicle_list_box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_box_vehicle_KeyDown);
+            // 
+            // remove_kid_button
+            // 
+            this.remove_kid_button.Location = new System.Drawing.Point(252, 204);
+            this.remove_kid_button.Name = "remove_kid_button";
+            this.remove_kid_button.Size = new System.Drawing.Size(107, 20);
+            this.remove_kid_button.TabIndex = 10;
+            this.remove_kid_button.Text = "Remove Selected";
+            this.remove_kid_button.UseVisualStyleBackColor = true;
+            // 
+            // remove_vehicle_button
+            // 
+            this.remove_vehicle_button.Location = new System.Drawing.Point(626, 204);
+            this.remove_vehicle_button.Name = "remove_vehicle_button";
+            this.remove_vehicle_button.Size = new System.Drawing.Size(107, 20);
+            this.remove_vehicle_button.TabIndex = 11;
+            this.remove_vehicle_button.Text = "Remove Selected";
+            this.remove_vehicle_button.UseVisualStyleBackColor = true;
+            // 
+            // add_prev_kid
+            // 
+            this.add_prev_kid.Location = new System.Drawing.Point(254, 65);
+            this.add_prev_kid.Name = "add_prev_kid";
+            this.add_prev_kid.Size = new System.Drawing.Size(107, 20);
+            this.add_prev_kid.TabIndex = 12;
+            this.add_prev_kid.Text = "Add Previous";
+            this.add_prev_kid.UseVisualStyleBackColor = true;
+            // 
+            // add_prev_vehicles
+            // 
+            this.add_prev_vehicles.Location = new System.Drawing.Point(623, 65);
+            this.add_prev_vehicles.Name = "add_prev_vehicles";
+            this.add_prev_vehicles.Size = new System.Drawing.Size(107, 20);
+            this.add_prev_vehicles.TabIndex = 13;
+            this.add_prev_vehicles.Text = "Add Previous";
+            this.add_prev_vehicles.UseVisualStyleBackColor = true;
+            // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 311);
+            this.Controls.Add(this.add_prev_vehicles);
+            this.Controls.Add(this.add_prev_kid);
+            this.Controls.Add(this.remove_vehicle_button);
+            this.Controls.Add(this.remove_kid_button);
+            this.Controls.Add(this.vehicle_list_box);
+            this.Controls.Add(this.kids_list_box);
             this.Controls.Add(this.main_label);
             this.Controls.Add(this.vehicle_label);
             this.Controls.Add(this.kid_label);
-            this.Controls.Add(this.list_box_vehicle);
-            this.Controls.Add(this.list_box_kid);
             this.Controls.Add(this.compute_button);
             this.Controls.Add(this.input_box_vehicle);
             this.Controls.Add(this.input_box_kid);
             this.Name = "main_window";
-            this.Text = "Form1";
+            this.Text = "v";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,11 +180,15 @@
         private System.Windows.Forms.TextBox input_box_kid;
         private System.Windows.Forms.TextBox input_box_vehicle;
         private System.Windows.Forms.Button compute_button;
-        public System.Windows.Forms.ListBox list_box_kid;
-        public System.Windows.Forms.ListBox list_box_vehicle;
         private System.Windows.Forms.Label kid_label;
         private System.Windows.Forms.Label vehicle_label;
         private System.Windows.Forms.Label main_label;
+        public System.Windows.Forms.CheckedListBox kids_list_box;
+        public System.Windows.Forms.CheckedListBox vehicle_list_box;
+        private System.Windows.Forms.Button remove_kid_button;
+        private System.Windows.Forms.Button remove_vehicle_button;
+        private System.Windows.Forms.Button add_prev_kid;
+        private System.Windows.Forms.Button add_prev_vehicles;
     }
 }
 
