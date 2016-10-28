@@ -16,11 +16,12 @@ namespace router.com.system
             kids_list = list;
         }
 
+
         public vehicle(string name_and_capacity)
         {
             int idx = name_and_capacity.IndexOf('/');
             this.name = name_and_capacity.Substring(0, idx);
-           this.capacity = int.Parse(name_and_capacity.Substring(idx + 1));
+            this.capacity = int.Parse(name_and_capacity.Substring(idx + 1));
         }
 
         public int getCapacity()

@@ -23,6 +23,7 @@ namespace router.com.gui
             InitializeComponent();
         }
 
+
         /// <summary>
         /// Sends input in kid box to list box on enter key event.
         /// </summary>
@@ -46,7 +47,6 @@ namespace router.com.gui
                         kids_list_box.Update();
                         
                     }
-
                     input_box_kid.Clear();
                 }
                 catch(Exception ex)
@@ -75,7 +75,6 @@ namespace router.com.gui
                         vehicle_list_box.Update();
 
                     }
-
                     input_box_vehicle.Clear();
                 }
                 catch (Exception ex)
