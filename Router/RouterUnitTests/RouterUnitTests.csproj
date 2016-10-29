@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="kid_tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="deleteTest.cs" />
     <Compile Include="vehicle_tests.cs" />
   </ItemGroup>
   <ItemGroup>

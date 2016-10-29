@@ -31,7 +31,6 @@
             this.input_box_kid = new System.Windows.Forms.TextBox();
             this.input_box_vehicle = new System.Windows.Forms.TextBox();
             this.compute_button = new System.Windows.Forms.Button();
-
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.main_label = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.remove_vehicle_button = new System.Windows.Forms.Button();
             this.add_prev_kid = new System.Windows.Forms.Button();
             this.add_prev_vehicles = new System.Windows.Forms.Button();
-
             this.SuspendLayout();
             // 
             // input_box_kid
@@ -70,9 +68,6 @@
             this.compute_button.Text = "Compute Route";
             this.compute_button.UseVisualStyleBackColor = true;
             // 
-
- 
-
             // kid_label
             // 
             this.kid_label.AutoSize = true;
@@ -103,7 +98,6 @@
             this.main_label.TabIndex = 7;
             this.main_label.Text = "Bus Router";
             // 
-
             // kids_list_box
             // 
             this.kids_list_box.FormattingEnabled = true;
@@ -129,6 +123,7 @@
             this.remove_kid_button.TabIndex = 10;
             this.remove_kid_button.Text = "Remove Selected";
             this.remove_kid_button.UseVisualStyleBackColor = true;
+            this.remove_kid_button.Click += new System.EventHandler(this.remove_kid_button_Click);
             // 
             // remove_vehicle_button
             // 
@@ -138,6 +133,7 @@
             this.remove_vehicle_button.TabIndex = 11;
             this.remove_vehicle_button.Text = "Remove Selected";
             this.remove_vehicle_button.UseVisualStyleBackColor = true;
+            this.remove_vehicle_button.Click += new System.EventHandler(this.remove_vehicle_button_Click);
             // 
             // add_prev_kid
             // 
@@ -156,8 +152,6 @@
             this.add_prev_vehicles.TabIndex = 13;
             this.add_prev_vehicles.Text = "Add Previous";
             this.add_prev_vehicles.UseVisualStyleBackColor = true;
-
-       
             // 
             // main_window
             // 
