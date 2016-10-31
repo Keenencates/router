@@ -52,30 +52,12 @@
     <Compile Include="com\gui\main_window.Designer.cs">
       <DependentUpon>main_window.cs</DependentUpon>
     </Compile>
-    <Compile Include="com\gui\previousKids.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="com\gui\previousKids.Designer.cs">
-      <DependentUpon>previousKids.cs</DependentUpon>
-    </Compile>
-    <Compile Include="com\gui\previousVehicles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="com\gui\previousVehicles.Designer.cs">
-      <DependentUpon>previousVehicles.cs</DependentUpon>
-    </Compile>
     <Compile Include="com\system\kid.cs" />
     <Compile Include="com\main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="com\system\vehicle.cs" />
     <EmbeddedResource Include="com\gui\main_window.resx">
       <DependentUpon>main_window.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="com\gui\previousKids.resx">
-      <DependentUpon>previousKids.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="com\gui\previousVehicles.resx">
-      <DependentUpon>previousVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
