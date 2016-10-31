@@ -1,4 +1,5 @@
 ﻿using router.com.system;
+using Router.com.gui;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace router.com.gui
         HashSet<kid> previous_kids = new HashSet<kid>();
         HashSet<vehicle> vehicles_running = new HashSet<vehicle>();
         HashSet<vehicle> previous_vehicles = new HashSet<vehicle>();
+        
 
         public main_window()
         {
@@ -130,6 +132,18 @@ namespace router.com.gui
                 vehicles_running.Remove(vehicle);
                 vehicle_list_box.Items.Remove(vehicle.getName());
             }
+        }
+
+        private void add_prev_kid_Click(object sender, EventArgs e)
+        {
+            previousKids kidWindow= new previousKids();
+            kidWindow.Show();
+        }
+
+        private void add_prev_vehicles_Click(object sender, EventArgs e)
+        {
+            previousVehicles vehicleWindow = new previousVehicles();
+            vehicleWindow.Show();
         }
     }
 }
