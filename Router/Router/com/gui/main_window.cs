@@ -43,7 +43,7 @@ namespace router.com.gui
                         kids_riding.Add(new_kid);
 
                         // that box needs to display the name and address of the kid
-                        kids_list_box.Items.Add(new_kid.getName());
+                        kids_list_box.Items.Add(new_kid);
                         kids_list_box.Update();
                         
                     }
@@ -56,6 +56,7 @@ namespace router.com.gui
             }
         }
 
+        
         private void input_box_vehicle_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (char)13)
@@ -71,7 +72,7 @@ namespace router.com.gui
                         vehicles_running.Add(new_vehicle);
 
                         // that box needs to display the name and address of the kid
-                        vehicle_list_box.Items.Add(new_vehicle.getName());
+                        vehicle_list_box.Items.Add(new_vehicle);
                         vehicle_list_box.Update();
 
                     }
@@ -86,16 +87,14 @@ namespace router.com.gui
 
         //Author: Turki Chris
         //Removeing vehicle object from set and List_box_kid
-        //Suggest Creating a super class for Vechicle and Kid Because of duplicated code
-        //kids with same name not taken care of
         private void remove_kid_button_Click(object sender, EventArgs e)
         {
             List<kid> removeKid = new List<kid>();
-            foreach (string each in kids_list_box.CheckedItems)
+            foreach (kid each in kids_list_box.CheckedItems)
             {
                 foreach (kid kid in kids_riding)
                 {
-                    if (kid.getName() == each)
+                    if (kid.Equals(each))
                     {
                         removeKid.Add(kid);
                     }
@@ -104,22 +103,21 @@ namespace router.com.gui
             foreach (kid rekid in removeKid)
             {
                 kids_riding.Remove(rekid);
-                kids_list_box.Items.Remove(rekid.getName());
+                kids_list_box.Items.Remove(rekid);
             }
         }
         
         //Author: Turki Chris
         //Removeing vehicle object from set and List_box_vehicle
-        //Suggest Creating a super class for Vechicle and Kid Because of duplicated code
-        //vehicles with same name not taken care of 
         private void remove_vehicle_button_Click(object sender, EventArgs e)
         {
             List<vehicle> removeVehicle = new List<vehicle>();
-            foreach (string each in vehicle_list_box.CheckedItems)
+            foreach (vehicle each in vehicle_list_box.CheckedItems)
             {
+
                 foreach (vehicle vehicle in vehicles_running)
                 {
-                    if (vehicle.getName() == each)
+                    if (vehicle.Equals(each))
                     {
                         removeVehicle.Add(vehicle);
                     }
@@ -128,7 +126,7 @@ namespace router.com.gui
             foreach (vehicle vehicle in removeVehicle)
             {
                 vehicles_running.Remove(vehicle);
-                vehicle_list_box.Items.Remove(vehicle.getName());
+                vehicle_list_box.Items.Remove(vehicle);
             }
         }
     }

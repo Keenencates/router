@@ -15,20 +15,21 @@ namespace RouterUnitTests
         public void TestMethod1()
         {
             System.Windows.Forms.CheckedListBox kids_list_box = new System.Windows.Forms.CheckedListBox() ;
-            kids_list_box.Items.Add("turki");
-            kids_list_box.Items.Add("chris");
-            kids_list_box.SetItemChecked(0, true);
+
             HashSet<kid> ridingKids = new HashSet<kid>();
             kid turki = new kid("turki/1720");
             kid chris = new kid("chris/1920");
             ridingKids.Add(turki);
             ridingKids.Add(chris);
+            kids_list_box.Items.Add(turki);
+            kids_list_box.Items.Add(chris);
+            kids_list_box.SetItemChecked(0, true);
             List<kid> removedKids = new List<kid>();
-            foreach (string each in kids_list_box.CheckedItems)
+            foreach (kid each in kids_list_box.CheckedItems)
             {
                 foreach (kid kid in ridingKids)
                 {
-                    if(kid.getName() == each)
+                    if(kid.Equals(each))
                     {
                         removedKids.Add(kid);
                     }
