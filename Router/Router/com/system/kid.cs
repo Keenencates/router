@@ -66,10 +66,10 @@
         /////// </summary>
         /////// <param name="obj"></param>
         /////// <returns>bool</returns>
-        ////public override bool Equals(object obj)
-        ////{
-        ////    return (this.name == ((kid)obj).getName() && this.address == ((kid)obj).getAddress());
-        ////}
+        public override bool Equals(object obj)
+        {
+            return (this.name == ((kid)obj).getName() && this.address == ((kid)obj).getAddress());
+        }
 
         /// <summary>
         /// Overrides GetHashCode()

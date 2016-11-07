@@ -12,10 +12,9 @@ namespace RouterUnitTests
         //Delete button Test 
         //Same for Vechicle and Kid
         [TestMethod]
-        public void TestMethod1()
+        public void kidRemoveTest()
         {
             System.Windows.Forms.CheckedListBox kids_list_box = new System.Windows.Forms.CheckedListBox() ;
-
             HashSet<kid> ridingKids = new HashSet<kid>();
             kid turki = new kid("turki/1720");
             kid chris = new kid("chris/1920");
@@ -23,7 +22,9 @@ namespace RouterUnitTests
             ridingKids.Add(chris);
             kids_list_box.Items.Add(turki);
             kids_list_box.Items.Add(chris);
+            //checks item at index 0
             kids_list_box.SetItemChecked(0, true);
+            //needed another list cause you can't modifie while iterating over a hashset
             List<kid> removedKids = new List<kid>();
             foreach (kid each in kids_list_box.CheckedItems)
             {

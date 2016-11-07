@@ -36,17 +36,20 @@ namespace router.com.gui
                 try {
                     // create a new kid based off what the user entered in
                     kid new_kid = new kid(input_box_kid.Text);
+
                     // Check if that kid is already in the set of kids getting driven home today
-                    if(!kids_riding.Contains(new_kid))
+                    foreach(kid each in kids_riding)
                     {
+                        if (each.ToString().Equals(new_kid.ToString())) return;
+                    }
                         // If kid is not already in set, add them to the set, and put their information in the list box
                         kids_riding.Add(new_kid);
 
                         // that box needs to display the name and address of the kid
-                        kids_list_box.Items.Add(new_kid);
+                        kids_list_box.Items.Add(new_kid.ToString());
                         kids_list_box.Update();
                         
-                    }
+                    
                     input_box_kid.Clear();
                 }
                 catch(Exception ex)
@@ -66,16 +69,18 @@ namespace router.com.gui
                     // create a new kid based off what the user entered in
                     vehicle new_vehicle = new vehicle(input_box_vehicle.Text);
                     // Check if that kid is already in the set of kids getting driven home today
-                    if (!vehicles_running.Contains(new_vehicle))
+                    foreach (vehicle each in vehicles_running)
                     {
-                        // If kid is not already in set, add them to the set, and put their information in the list box
+                        if (each.ToString().Equals(new_vehicle.ToString())) return;
+                    }
+                   // If kid is not already in set, add them to the set, and put their information in the list box
                         vehicles_running.Add(new_vehicle);
 
                         // that box needs to display the name and address of the kid
-                        vehicle_list_box.Items.Add(new_vehicle);
+                        vehicle_list_box.Items.Add(new_vehicle.ToString());
                         vehicle_list_box.Update();
 
-                    }
+                    
                     input_box_vehicle.Clear();
                 }
                 catch (Exception ex)
@@ -90,11 +95,11 @@ namespace router.com.gui
         private void remove_kid_button_Click(object sender, EventArgs e)
         {
             List<kid> removeKid = new List<kid>();
-            foreach (kid each in kids_list_box.CheckedItems)
+            foreach (string each in kids_list_box.CheckedItems)
             {
                 foreach (kid kid in kids_riding)
                 {
-                    if (kid.Equals(each))
+                    if (kid.ToString().Equals(each))
                     {
                         removeKid.Add(kid);
                     }
@@ -103,7 +108,7 @@ namespace router.com.gui
             foreach (kid rekid in removeKid)
             {
                 kids_riding.Remove(rekid);
-                kids_list_box.Items.Remove(rekid);
+                kids_list_box.Items.Remove(rekid.ToString());
             }
         }
         
@@ -112,12 +117,12 @@ namespace router.com.gui
         private void remove_vehicle_button_Click(object sender, EventArgs e)
         {
             List<vehicle> removeVehicle = new List<vehicle>();
-            foreach (vehicle each in vehicle_list_box.CheckedItems)
+            foreach (string each in vehicle_list_box.CheckedItems)
             {
 
                 foreach (vehicle vehicle in vehicles_running)
                 {
-                    if (vehicle.Equals(each))
+                    if (vehicle.ToString().Equals(each))
                     {
                         removeVehicle.Add(vehicle);
                     }
@@ -126,7 +131,7 @@ namespace router.com.gui
             foreach (vehicle vehicle in removeVehicle)
             {
                 vehicles_running.Remove(vehicle);
-                vehicle_list_box.Items.Remove(vehicle);
+                vehicle_list_box.Items.Remove(vehicle.ToString());
             }
         }
     }
