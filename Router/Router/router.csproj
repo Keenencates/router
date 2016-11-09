@@ -55,6 +55,7 @@
     <Compile Include="com\system\kid.cs" />
     <Compile Include="com\main.cs" />
     <Compile Include="com\system\LocationsCollection.cs" />
+    <Compile Include="com\system\route_manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="com\system\vehicle.cs" />
     <EmbeddedResource Include="com\gui\main_window.resx">

@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="deleteTest.cs" />
     <Compile Include="LocationsCollection_test.cs" />
+    <Compile Include="compute_tests.cs" />
     <Compile Include="vehicle_tests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

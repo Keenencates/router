@@ -13,14 +13,20 @@ namespace router.com.gui
 {
     public partial class main_window : Form
     {
-        HashSet<kid> kids_riding = new HashSet<kid>();
-        HashSet<kid> previous_kids = new HashSet<kid>();
-        HashSet<vehicle> vehicles_running = new HashSet<vehicle>();
-        HashSet<vehicle> previous_vehicles = new HashSet<vehicle>();
+        HashSet<kid> kids_riding;
+        HashSet<kid> previous_kids;
+        HashSet<vehicle> vehicles_running;
+        HashSet<vehicle> previous_vehicles;
+
+        route_manager route_computer;
 
         public main_window()
         {
             InitializeComponent();
+            kids_riding = new HashSet<kid>();
+            previous_kids = new HashSet<kid>();
+            vehicles_running = new HashSet<vehicle>();
+            previous_vehicles = new HashSet<vehicle>();
         }
 
 
@@ -132,6 +138,21 @@ namespace router.com.gui
             {
                 vehicles_running.Remove(vehicle);
                 vehicle_list_box.Items.Remove(vehicle.ToString());
+            }
+        }
+
+        private void compute_button_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                route_computer = new route_manager(kids_riding, vehicles_running);
+                route_computer.computeRoutes();
+                route_computer.printFiles("output/");
+                MessageBox.Show("Files printed!");
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Multiple kids and vehicles not implemented yet.\n" + ex.Source);
             }
         }
     }
