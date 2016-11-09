@@ -68,7 +68,7 @@
         public override bool Equals(object obj)
         {
             return (this.name == ((kid)obj).getName() && this.address == ((kid)obj).getAddress());
-        }
+       }
 
         /// <summary>
         /// Overrides GetHashCode()
@@ -76,7 +76,7 @@
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return name.GetHashCode() + address.GetHashCode();
         }
     }
 }
