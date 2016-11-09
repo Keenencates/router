@@ -59,12 +59,13 @@
             return this.getName() + "/" + this.getAddress();
         }
 
-        //Authors : Keenen Cates, Simon Owens
-        /// <summary>
-        /// Overrides Equals() for equality comparer
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns>bool</returns>
+        //chris johnson: commented out breaks code
+        //////Authors : Keenen Cates, Simon Owens
+        /////// <summary>
+        /////// Overrides Equals() for equality comparer
+        /////// </summary>
+        /////// <param name="obj"></param>
+        /////// <returns>bool</returns>
         public override bool Equals(object obj)
         {
             return (this.name == ((kid)obj).getName() && this.address == ((kid)obj).getAddress());
