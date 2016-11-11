@@ -14,16 +14,16 @@ namespace router.com.system
 
         public route_manager(HashSet<kid> kids, HashSet<vehicle> vehicles)
         {
-            if (kids.Count == 1 && vehicles.Count == 1)
+            if(vehicles.Count == 1)
             {
                 routes = new Dictionary<string, string>();
                 this.kids = kids;
                 this.vehicles = vehicles;
-            }
-            else
+            } else
             {
                 throw new InvalidOperationException();
             }
+                
         }
 
         public void computeRoutes()
@@ -31,10 +31,10 @@ namespace router.com.system
             string output = "";
             foreach(var each in vehicles)
             {
-                output += each.getName() + ": \n";
+                output += each.getName() + ": \r\n\t";
                 foreach(var each2 in kids)
                 {
-                    output += each2.getName() + ": " + each2.getAddress() + " \n";
+                    output += each2.getName() + ": " + each2.getAddress() + " \r\n\t";
                 }
                 routes.Add(each.getName(), output);
             }
