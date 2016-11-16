@@ -1,4 +1,6 @@
-﻿namespace router.com.gui
+﻿using Router.com.system;
+
+namespace router.com.gui
 {
     partial class main_window
     {
@@ -34,8 +36,8 @@
             this.kid_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.main_label = new System.Windows.Forms.Label();
-            this.kids_list_box = new System.Windows.Forms.CheckedListBox();
-            this.vehicle_list_box = new System.Windows.Forms.CheckedListBox();
+            this.kids_list_box = new kidListBox();
+            this.vehicle_list_box = new vehicleListBox();
             this.remove_kid_button = new System.Windows.Forms.Button();
             this.remove_vehicle_button = new System.Windows.Forms.Button();
             this.add_prev_kid = new System.Windows.Forms.Button();
@@ -200,8 +202,8 @@
         private System.Windows.Forms.Label kid_label;
         private System.Windows.Forms.Label vehicle_label;
         private System.Windows.Forms.Label main_label;
-        public System.Windows.Forms.CheckedListBox kids_list_box;
-        public System.Windows.Forms.CheckedListBox vehicle_list_box;
+        public kidListBox kids_list_box;
+        public vehicleListBox vehicle_list_box;
         private System.Windows.Forms.Button remove_kid_button;
         private System.Windows.Forms.Button remove_vehicle_button;
         private System.Windows.Forms.Button add_prev_kid;

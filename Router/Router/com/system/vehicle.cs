@@ -39,9 +39,9 @@ namespace router.com.system
             return kids_list;
         }
 
-        public bool Equals()
+        public bool Equals(object o)
         {
-            throw new NotImplementedException();
+            return (((vehicle)o).capacity == this.capacity && ((vehicle)o).name == this.name);
         }
         
         public override string ToString()

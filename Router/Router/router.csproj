@@ -52,10 +52,19 @@
     <Compile Include="com\gui\main_window.Designer.cs">
       <DependentUpon>main_window.cs</DependentUpon>
     </Compile>
+    <Compile Include="com\system\kidListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="com\system\objectListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="com\system\kid.cs" />
     <Compile Include="com\main.cs" />
     <Compile Include="com\system\LocationsCollection.cs" />
     <Compile Include="com\system\route_manager.cs" />
+    <Compile Include="com\system\vehicleListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="com\system\vehicle.cs" />
     <EmbeddedResource Include="com\gui\main_window.resx">

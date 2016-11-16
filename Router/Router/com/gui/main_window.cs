@@ -1,4 +1,5 @@
 ﻿using router.com.system;
+using Router.com.system;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,14 @@ namespace router.com.gui
 {
     public partial class main_window : Form
     {
-        HashSet<kid> kids_riding;
-        HashSet<kid> previous_kids;
-        HashSet<vehicle> vehicles_running;
-        HashSet<vehicle> previous_vehicles;
+
 
         route_manager route_computer;
 
         public main_window()
         {
             InitializeComponent();
-            kids_riding = new HashSet<kid>();
-            previous_kids = new HashSet<kid>();
-            vehicles_running = new HashSet<vehicle>();
-            previous_vehicles = new HashSet<vehicle>();
+
         }
 
 
@@ -40,22 +35,8 @@ namespace router.com.gui
             if (e.KeyValue == (char)13)
             {
                 try {
-                    // create a new kid based off what the user entered in
-                    kid new_kid = new kid(input_box_kid.Text);
-
-                    // Check if that kid is already in the set of kids getting driven home today
-                    foreach(kid each in kids_riding)
-                    {
-                        if (each.ToString().Equals(new_kid.ToString())) return;
-                    }
-                        // If kid is not already in set, add them to the set, and put their information in the list box
-                        kids_riding.Add(new_kid);
-
-                        // that box needs to display the name and address of the kid
-                        kids_list_box.Items.Add(new_kid.ToString());
-                        kids_list_box.Update();
-                        
-                    
+                    kids_list_box.add(new kid(input_box_kid.Text));
+                    kids_list_box.Update();
                     input_box_kid.Clear();
                 }
                 catch(Exception ex)
@@ -72,21 +53,8 @@ namespace router.com.gui
             {
                 try
                 {
-                    // create a new kid based off what the user entered in
-                    vehicle new_vehicle = new vehicle(input_box_vehicle.Text);
-                    // Check if that kid is already in the set of kids getting driven home today
-                    foreach (vehicle each in vehicles_running)
-                    {
-                        if (each.ToString().Equals(new_vehicle.ToString())) return;
-                    }
-                   // If kid is not already in set, add them to the set, and put their information in the list box
-                        vehicles_running.Add(new_vehicle);
-
-                        // that box needs to display the name and address of the kid
-                        vehicle_list_box.Items.Add(new_vehicle.ToString());
-                        vehicle_list_box.Update();
-
-                    
+                    vehicle_list_box.add(new vehicle(input_box_vehicle.Text));
+                    vehicle_list_box.Update();
                     input_box_vehicle.Clear();
                 }
                 catch (Exception ex)
@@ -100,52 +68,23 @@ namespace router.com.gui
         //Removeing vehicle object from set and List_box_kid
         private void remove_kid_button_Click(object sender, EventArgs e)
         {
-            List<kid> removeKid = new List<kid>();
-            foreach (string each in kids_list_box.CheckedItems)
-            {
-                foreach (kid kid in kids_riding)
-                {
-                    if (kid.ToString().Equals(each))
-                    {
-                        removeKid.Add(kid);
-                    }
-                }
-            }
-            foreach (kid rekid in removeKid)
-            {
-                kids_riding.Remove(rekid);
-                kids_list_box.Items.Remove(rekid.ToString());
-            }
+            kids_list_box.deleteChecked();
+            
         }
         
         //Author: Turki Chris
         //Removeing vehicle object from set and List_box_vehicle
         private void remove_vehicle_button_Click(object sender, EventArgs e)
         {
-            List<vehicle> removeVehicle = new List<vehicle>();
-            foreach (string each in vehicle_list_box.CheckedItems)
-            {
-
-                foreach (vehicle vehicle in vehicles_running)
-                {
-                    if (vehicle.ToString().Equals(each))
-                    {
-                        removeVehicle.Add(vehicle);
-                    }
-                }
-            }
-            foreach (vehicle vehicle in removeVehicle)
-            {
-                vehicles_running.Remove(vehicle);
-                vehicle_list_box.Items.Remove(vehicle.ToString());
-            }
+            vehicle_list_box.deleteChecked();
         }
 
         private void compute_button_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                route_computer = new route_manager(kids_riding, vehicles_running);
+                
+                route_computer = new route_manager(kids_list_box.getSet(), vehicle_list_box.getSet());
                 route_computer.computeRoutes();
                 route_computer.printFiles("output/");
                 MessageBox.Show("Files printed!");
