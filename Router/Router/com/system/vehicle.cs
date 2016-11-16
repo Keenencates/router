@@ -39,9 +39,9 @@ namespace router.com.system
             return kids_list;
         }
 
-        public bool Equals(object o)
+        public bool Equals(object obj)
         {
-            return (((vehicle)o).capacity == this.capacity && ((vehicle)o).name == this.name);
+            return (((vehicle)obj).capacity == this.capacity && ((vehicle)obj).name == this.name);
         }
         
         public override string ToString()
