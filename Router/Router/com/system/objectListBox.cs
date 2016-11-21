@@ -16,6 +16,7 @@ namespace Router.com.system
         //deletes checked objects
         public void deleteChecked()
         {
+            // cannot delete checked items while iterating through them
             HashSet<object> objects = new HashSet<object>();
             foreach(object b in this.CheckedItems)
             {

@@ -42,5 +42,13 @@ namespace Router.com.system
             }
             return false;
         }
+
+        public void edit(object selectedItem, string name, int capacity)
+        {
+            vehicle new_vehicle = new vehicle(capacity, name, null);
+            Items.Remove(selectedItem);
+            this.add(new_vehicle);
+
+        }
     }
 }

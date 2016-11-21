@@ -1,4 +1,5 @@
 ﻿using router.com.system;
+using Router.com.gui;
 using Router.com.system;
 using System;
 using System.Collections.Generic;
@@ -93,6 +94,23 @@ namespace router.com.gui
             {
                 MessageBox.Show("Multiple kids and vehicles not implemented yet.\n" + ex.Source);
             }
+        }
+
+        private void kids_list_box_DoubleClick(object sender, EventArgs e)
+        {
+            
+            edit window = new edit(kids_list_box,"kid");
+            window.Show();
+           
+            //pop up 
+            //stores new values
+            //sends to kids_list_box.edit(object , name ,address)
+        }
+
+        private void vehicle_list_box_DoubleClick(object sender, EventArgs e)
+        {
+            edit vehicle_window = new edit(vehicle_list_box,"vehicle");
+            vehicle_window.Show();
         }
     }
 }

@@ -4,6 +4,7 @@ using router.com.system;
 using System.Collections.Generic;
 using Router.com.system;
 using System.Linq;
+using Router.com.gui;
 
 namespace RouterUnitTests
 {
@@ -91,6 +92,92 @@ namespace RouterUnitTests
             k.Add(simon);
             k.Add(turki);
             CollectionAssert.AreEqual(k.ToList(), kids_list_box.getSet().ToList());
+        }
+
+        // test that nothing happens when we click exit instead of save
+
+        // test vehicleListBox edit method
+        [TestMethod]
+        public void editKidTest()
+        {
+            // make a kid and add him to the list
+            kidListBox kid_list_box = new kidListBox();
+            kid child = new kid("Simon Owens", "Lincoln Ave");
+            kid_list_box.add(child);
+
+            // edit him
+            kid_list_box.edit(child, "Don Roberts", "Heaven Ave");
+
+            // only kid that should exist is the kid that we edited
+            HashSet<kid> expectedList = new HashSet<kid>();
+            kid expected = new kid("Don Roberts/Heaven Ave");
+            expectedList.Add(expected);
+
+            CollectionAssert.Equals(expectedList.ToList(), kid_list_box.getSet().ToList());
+        }
+
+        // test kidListBox edit method
+        [TestMethod]
+        public void editVehicleTest()
+        {
+            // make a vehicle and add him to the list
+            vehicleListBox vehicle_list_box = new vehicleListBox();
+            vehicle van = new vehicle("Red Van/7");
+            vehicle_list_box.add(van);
+
+            // edit it
+            vehicle_list_box.edit(van, "Blue Van", 10);
+
+            // only vehicle that should exist is the vehilce that we edited
+            HashSet<vehicle> expectedList = new HashSet<vehicle>();
+            vehicle expected = new vehicle("Blue Van/10");
+            expectedList.Add(expected);
+
+            CollectionAssert.Equals(expectedList.ToList(), vehicle_list_box.getSet().ToList());
+        }
+
+        // if we edit a kid to a kid that is already in the current list, it should only keep the newly edited kid
+        [TestMethod]
+        public void editAlreadyExisitingKidTest()
+        {
+            // add two kids to the list
+            kidListBox kid_list_box = new kidListBox();
+            kid child1 = new kid("Simon Owens", "Lincoln Ave");
+            kid child2 = new kid("Don Roberts/Heaven Ave");
+            kid_list_box.add(child1);
+            kid_list_box.add(child2);
+
+            // edit one to what the other kid already is
+            kid_list_box.edit(child1, "Don Roberts", "Heaven Ave");
+
+            // we already have what we edited, the edited copy should be all that is left
+            HashSet<kid> expectedList = new HashSet<kid>();
+            kid expected = new kid("Don Roberts/Heaven Ave");
+            expectedList.Add(expected);
+
+            CollectionAssert.Equals(expectedList.ToList(), kid_list_box.getSet().ToList());
+        }
+
+        // if we edit a vehicle to a vehicle that is already in the current list, it should onlyu keep the newly edited kid
+        [TestMethod]
+        public void editAlreadyExisitingVehicleTest()
+        {
+            // add two vehilces to the list
+            vehicleListBox vehicle_list_box = new vehicleListBox();
+            vehicle van1 = new vehicle("Red Van/7");
+            vehicle van2 = new vehicle("Blue Van/10");
+            vehicle_list_box.add(van1);
+            vehicle_list_box.add(van2);
+
+            // edit one of the vehilces to what another vehicle again.  
+            vehicle_list_box.edit(van1, "Blue Van", 10);
+
+            // only vehicle that should exist is the vehilce that we edited
+            HashSet<vehicle> expectedList = new HashSet<vehicle>();
+            vehicle expected = new vehicle("Blue Van/10");
+            expectedList.Add(expected);
+
+            CollectionAssert.Equals(expectedList.ToList(), vehicle_list_box.getSet().ToList());
         }
     }
 }

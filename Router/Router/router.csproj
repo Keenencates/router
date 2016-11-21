@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com\gui\edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="com\gui\edit.Designer.cs">
+      <DependentUpon>edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="com\gui\main_window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="com\system\vehicle.cs" />
+    <EmbeddedResource Include="com\gui\edit.resx">
+      <DependentUpon>edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="com\gui\main_window.resx">
       <DependentUpon>main_window.cs</DependentUpon>
     </EmbeddedResource>

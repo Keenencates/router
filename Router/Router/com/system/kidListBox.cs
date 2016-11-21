@@ -35,5 +35,12 @@ namespace Router.com.system
         {
             if (!this.contains(new_kid)) this.Items.Add(new_kid);
         }
+
+        public void edit(object selectedItem,string Name, string Address)
+        {
+            kid new_kid = new kid(Name, Address);
+            Items.Remove(selectedItem);
+            add(new_kid);
+        }
     }
 }
