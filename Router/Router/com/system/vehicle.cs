@@ -43,7 +43,7 @@ namespace router.com.system
         {
             return (((vehicle)obj).capacity == this.capacity && ((vehicle)obj).name == this.name);
         }
-        
+
         public override string ToString()
         {
             return this.name + "/" + this.capacity;
