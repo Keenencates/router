@@ -39,11 +39,15 @@ namespace router.com.system
             return kids_list;
         }
 
-        public bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             return (((vehicle)obj).capacity == this.capacity && ((vehicle)obj).name == this.name);
         }
-        
+
+        public override int GetHashCode()
+        {
+            return name.GetHashCode() + capacity.GetHashCode();
+        }
         public override string ToString()
         {
             return this.name + "/" + this.capacity;

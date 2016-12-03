@@ -129,6 +129,7 @@ namespace router.com.gui
             this.add_prev_kid.TabIndex = 12;
             this.add_prev_kid.Text = "Add Previous";
             this.add_prev_kid.UseVisualStyleBackColor = true;
+            this.add_prev_kid.Click += new System.EventHandler(this.add_prev_kid_Click);
             // 
             // add_prev_vehicles
             // 
@@ -138,6 +139,7 @@ namespace router.com.gui
             this.add_prev_vehicles.TabIndex = 13;
             this.add_prev_vehicles.Text = "Add Previous";
             this.add_prev_vehicles.UseVisualStyleBackColor = true;
+            this.add_prev_vehicles.Click += new System.EventHandler(this.add_prev_vehicles_Click);
             // 
             // vehicle_list_box
             // 

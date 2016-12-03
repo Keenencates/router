@@ -36,6 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
@@ -58,6 +61,7 @@
     <Compile Include="objectListBoxTest.cs" />
     <Compile Include="LocationsCollection_test.cs" />
     <Compile Include="compute_tests.cs" />
+    <Compile Include="routerDBTest.cs" />
     <Compile Include="vehicle_tests.cs" />
   </ItemGroup>
   <ItemGroup>

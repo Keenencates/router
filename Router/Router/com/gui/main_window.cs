@@ -1,4 +1,5 @@
 ﻿using router.com.system;
+using Router.com;
 using Router.com.gui;
 using Router.com.system;
 using System;
@@ -16,14 +17,14 @@ namespace router.com.gui
     public partial class main_window : Form
     {
 
-
         route_manager route_computer;
-
+        router_db db;
         public main_window()
         {
             InitializeComponent();
-
+            db = new router_db();
         }
+      
 
 
         /// <summary>
@@ -89,6 +90,14 @@ namespace router.com.gui
                 route_computer.computeRoutes();
                 route_computer.printFiles("output/");
                 MessageBox.Show("Files printed!");
+                try
+                {
+                    db.upload(kids_list_box.getSet(), vehicle_list_box.getSet());
+                }
+                catch(System.Data.SQLite.SQLiteException ex)
+                {// do nothing, already in database
+                }
+               
             }
             catch (InvalidOperationException ex)
             {
@@ -98,19 +107,26 @@ namespace router.com.gui
 
         private void kids_list_box_DoubleClick(object sender, EventArgs e)
         {
-            
             edit window = new edit(kids_list_box,"kid");
             window.Show();
-           
-            //pop up 
-            //stores new values
-            //sends to kids_list_box.edit(object , name ,address)
         }
 
         private void vehicle_list_box_DoubleClick(object sender, EventArgs e)
         {
             edit vehicle_window = new edit(vehicle_list_box,"vehicle");
             vehicle_window.Show();
+        }
+
+        private void add_prev_kid_Click(object sender, EventArgs e)
+        {
+            previous_items previous = new previous_items(kids_list_box, db.getKids());
+            previous.Show();
+        }
+
+        private void add_prev_vehicles_Click(object sender, EventArgs e)
+        {
+            previous_items previous = new previous_items(vehicle_list_box, db.getVehicle());
+            previous.Show();
         }
     }
 }
