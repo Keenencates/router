@@ -29,43 +29,45 @@
         private void InitializeComponent()
         {
             this.PrintAll = new System.Windows.Forms.Button();
-            this.Kids = new Router.com.system.objectListBox();
-            this.Vehicles = new Router.com.system.objectListBox();
+            this.vehicles = new System.Windows.Forms.ListBox();
+            this.kids = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // PrintAll
             // 
-            this.PrintAll.Location = new System.Drawing.Point(666, 590);
+            this.PrintAll.Location = new System.Drawing.Point(1295, 105);
             this.PrintAll.Name = "PrintAll";
             this.PrintAll.Size = new System.Drawing.Size(193, 116);
             this.PrintAll.TabIndex = 0;
             this.PrintAll.Text = "Print All";
             this.PrintAll.UseVisualStyleBackColor = true;
+            this.PrintAll.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PrintAll_MouseClick);
             // 
-            // Kids
+            // vehicles
             // 
-            this.Kids.FormattingEnabled = true;
-            this.Kids.Location = new System.Drawing.Point(544, 28);
-            this.Kids.Name = "Kids";
-            this.Kids.Size = new System.Drawing.Size(1003, 532);
-            this.Kids.TabIndex = 2;
-            this.Kids.SelectedIndexChanged += new System.EventHandler(this.objectListBox1_SelectedIndexChanged);
+            this.vehicles.FormattingEnabled = true;
+            this.vehicles.ItemHeight = 31;
+            this.vehicles.Location = new System.Drawing.Point(27, 22);
+            this.vehicles.Name = "vehicles";
+            this.vehicles.Size = new System.Drawing.Size(442, 655);
+            this.vehicles.TabIndex = 1;
+            this.vehicles.SelectedIndexChanged += new System.EventHandler(this.vehicles_SelectedIndexChanged);
             // 
-            // Vehicles
+            // kids
             // 
-            this.Vehicles.FormattingEnabled = true;
-            this.Vehicles.Location = new System.Drawing.Point(46, 28);
-            this.Vehicles.Name = "Vehicles";
-            this.Vehicles.Size = new System.Drawing.Size(465, 532);
-            this.Vehicles.TabIndex = 1;
+            this.kids.FormattingEnabled = true;
+            this.kids.ItemHeight = 31;
+            this.kids.Location = new System.Drawing.Point(506, 24);
+            this.kids.Name = "kids";
+            this.kids.Size = new System.Drawing.Size(690, 655);
             // 
             // route_visualizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 725);
-            this.Controls.Add(this.Kids);
-            this.Controls.Add(this.Vehicles);
+            this.Controls.Add(this.kids);
+            this.Controls.Add(this.vehicles);
             this.Controls.Add(this.PrintAll);
             this.Name = "route_visualizer";
             this.Text = "route_visualizer";
@@ -76,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.Button PrintAll;
-        private system.objectListBox Vehicles;
-        private system.objectListBox Kids;
+        private System.Windows.Forms.ListBox vehicles;
+        private System.Windows.Forms.ListBox kids;
     }
 }

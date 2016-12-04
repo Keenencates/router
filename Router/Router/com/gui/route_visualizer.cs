@@ -24,14 +24,23 @@ namespace Router.com.gui
             InitializeComponent();
             foreach(var each in v)
             {
-                Vehicles.Items.Add(each);
+                vehicles.Items.Add(each);
             }
-            Vehicles.Update();
+            vehicles.Update();
         }
-
-        private void objectListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void PrintAll_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void vehicles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            kids.Items.Clear();
+            foreach (var each in ((vehicle)vehicles.SelectedItem).getKids())
+            {
+                kids.Items.Add(each);
+            }
+            kids.Update();
         }
     }
 }
