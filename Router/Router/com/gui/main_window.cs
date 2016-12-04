@@ -88,9 +88,7 @@ namespace router.com.gui
                 route_computer = new route_manager(kids_list_box.getSet(), vehicle_list_box.getSet());
                 route_computer.computeRoutes();
                 route_computer.printFiles("output/");
-
-                route_visualizer visualizer = new route_visualizer(vehicle_list_box.getSet());
-                visualizer.Show();
+                route_computer.displayRoute();
             }
             catch (InvalidOperationException ex)
             {

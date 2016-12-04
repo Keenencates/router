@@ -43,7 +43,11 @@ namespace router.com.system
         {
             return (((vehicle)obj).capacity == this.capacity && ((vehicle)obj).name == this.name);
         }
-
+        
+        public void load_kid(kid k)
+        {
+            kids_list.Add(k);
+        }
         public override string ToString()
         {
             return this.name + "/" + this.capacity;
