@@ -93,6 +93,7 @@ namespace router.com.gui
                 try
                 {
                     db.upload(kids_list_box.getSet(), vehicle_list_box.getSet());
+                    db.reload();
                 }
                 catch(System.Data.SQLite.SQLiteException ex)
                 {// do nothing, already in database
