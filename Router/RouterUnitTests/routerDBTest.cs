@@ -26,8 +26,9 @@ namespace RouterUnitTests
             db.upload(additional_kids, additional_vehicles);
             db.reload();
 
-            Assert.IsTrue(db.getVehicle().IsSupersetOf(additional_vehicles));
-            Assert.IsTrue(db.getKids().IsSupersetOf(additional_kids));
+            CollectionAssert.Equals(db.getVehicle(), additional_vehicles);
+            CollectionAssert.Equals(db.getKids(), additional_kids);
+
         }
         [TestMethod]
         public void LoadKids()
@@ -46,7 +47,7 @@ namespace RouterUnitTests
             HashSet<vehicle> firstVehicle = new HashSet<vehicle>();
             firstVehicle.Add(new vehicle("red/7"));
             HashSet<vehicle> vehicles = db.getVehicle();
-            Assert.IsTrue(vehicles.IsSupersetOf(firstVehicle));
+            CollectionAssert.Equals(vehicles, firstVehicle);
         }
     }
 }

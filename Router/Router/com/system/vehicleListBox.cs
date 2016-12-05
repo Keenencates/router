@@ -16,7 +16,10 @@ namespace Router.com.system
 
         public void add(vehicle new_vehicle)
         {
-            if (!this.contains(new_vehicle)) this.Items.Add(new_vehicle);
+            if (!this.contains(new_vehicle))
+            {
+                this.Items.Add(new_vehicle);
+            }
         }
 
 
@@ -35,7 +38,7 @@ namespace Router.com.system
         {
             foreach (vehicle vehicle in this.Items)
             {
-                if (vehicle.ToString().Equals(v.ToString()))
+                if (vehicle.Equals(v))
                 {
                     return true;
                 }
