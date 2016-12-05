@@ -89,15 +89,15 @@ namespace router.com.gui
                 route_computer = new route_manager(kids_list_box.getSet(), vehicle_list_box.getSet());
                 route_computer.computeRoutes();
                 route_computer.printFiles("output/");
-                MessageBox.Show("Files printed!");
                 try
                 {
                     db.upload(kids_list_box.getSet(), vehicle_list_box.getSet());
+                    db.reload();
                 }
                 catch(System.Data.SQLite.SQLiteException ex)
                 {// do nothing, already in database
                 }
-               
+                route_computer.displayRoute();
             }
             catch (InvalidOperationException ex)
             {

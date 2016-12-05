@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using router.com.system;
 using System.IO;
+using Router.com.gui;
 
 namespace router.com.system
 {
@@ -9,6 +9,8 @@ namespace router.com.system
     {
         private HashSet<kid> kids;
         private HashSet<vehicle> vehicles;
+
+        private route_visualizer visualizer;
 
         private Dictionary<string, string> routes;
 
@@ -35,6 +37,7 @@ namespace router.com.system
                 foreach(var each2 in kids)
                 {
                     output += each2.getName() + ": " + each2.getAddress() + " \r\n\t";
+                    each.load_kid(each2);
                 }
                 routes.Add(each.getName(), output);
             }
@@ -52,6 +55,12 @@ namespace router.com.system
                 Directory.CreateDirectory(file_dir);
                 File.WriteAllText(file_dir + each.Key + ".txt", each.Value);
             }
+        }
+
+        public void displayRoute()
+        {
+            visualizer = new route_visualizer(vehicles);
+            visualizer.Show();
         }
     }
 }
