@@ -13,7 +13,8 @@ namespace router.com.system
         {
             capacity = vehicle_capacity;
             name = vehicle_name;
-            kids_list = list;
+            if (list != null)
+                kids_list = list;
         }
 
 
@@ -51,6 +52,16 @@ namespace router.com.system
         public override string ToString()
         {
             return this.name + "/" + this.capacity;
+        }
+
+        public void addKid(kid kid)
+        {
+            kids_list.Add(kid);
+        }
+
+        public void addKids(HashSet<kid> kids)
+        {
+            kids_list = kids;
         }
     }
 }

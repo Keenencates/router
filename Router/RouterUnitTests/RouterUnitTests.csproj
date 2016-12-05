@@ -62,6 +62,8 @@
     <Compile Include="LocationsCollection_test.cs" />
     <Compile Include="compute_tests.cs" />
     <Compile Include="routerDBTest.cs" />
+    <Compile Include="sequentialClusterTest.cs" />
+    <Compile Include="PointTest.cs" />
     <Compile Include="vehicle_tests.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,10 +1,14 @@
-﻿namespace router.com.system
+﻿using Google.Maps.Geocoding;
+using System;
+using System.Linq;
+
+namespace router.com.system
 {
     public class kid
     {
         private string name;
         private string address;
-
+        private point p;
         //Author : Simon Owens
         /// <summary>
         /// Constructs kid object from a name and address
@@ -28,6 +32,21 @@
             this.name = name_and_addr.Substring(0, idx); 
             this.address = name_and_addr.Substring(idx + 1);
     }
+
+        public point getPoint()
+        {
+            if (p == null)
+            {
+                var request = new GeocodingRequest();
+                request.Address = this.address + ", IN";
+                request.Sensor = false;
+                var response = new GeocodingService().GetResponse(request);
+                var result = response.Results.First();
+                p = new point(result.Geometry.Location.Longitude, result.Geometry.Location.Latitude);
+            }
+            return p;
+        }
+
 
         //Author : Simon Owens
         /// <summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Router;
 using router.com.system;
+using System.Windows.Forms;
 
 namespace RouterUnitTests
 {
@@ -48,6 +49,14 @@ namespace RouterUnitTests
             Assert.AreEqual(true, child1.Equals(child2));
         }
 
+        [TestMethod]
+        public void getPoint()
+        {
+            point p = new point(-87.533201, 37.967409);
+            kid child1 = new kid("sam/1720  gum st");
+            Assert.AreEqual(p.getLongitude(), child1.getPoint().getLongitude());
+            Assert.AreEqual(p.getLatitude(), child1.getPoint().getLatitude());
+        }
         //Authors: Keenen Cates, Simon Owens
         /// <summary>
         /// Tests to see if actual name and actual address match expected values. Otherwise, fail assertions.
